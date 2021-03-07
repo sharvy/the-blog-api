@@ -1,9 +1,13 @@
-version: 2
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.1.0
+  node: circleci/node@2
 
 jobs:
   build:
     docker:
-      - image: cimg/ruby:2.7.0-node
+      - image: cimg/ruby:2.7.2
     steps:
       - checkout
       - ruby/install-deps
@@ -14,7 +18,7 @@ jobs:
   test:
     parallelism: 3
     docker:
-      - image: cimg/ruby:2.7.0-node
+      - image: cimg/ruby:2.7.2
       - image: circleci/postgres:9.5-alpine
         environment:
           POSTGRES_USER: the-blog-api
