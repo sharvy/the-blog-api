@@ -19,7 +19,7 @@ jobs:
       - image: circleci/postgres:9.5-alpine
         environment:
           POSTGRES_USER: the-blog-api
-          POSTGRES_DB: the-blog-api
+          POSTGRES_DB: the_blog_api_test
           POSTGRES_PASSWORD: ""
     environment:
       BUNDLE_JOBS: "3"
